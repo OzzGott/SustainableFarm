@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Farm Investment Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game-container">
+    <h1>🌾 Sustainable Farm Game</h1>
+    <div id="game">
+        <div id="status-bar">
+            <div>💰 Budget: $<span id="budget">1000</span></div>
+            <div>📈 Profit: $<span id="profit">0</span></div>
+            <div>🌿 CO₂e: <span id="co2">0</span> kg</div>
+        </div>
+
+        <div id="question-area"></div>
+
+        <div id="end-screen" class="hidden">
+            <h2>Game Over!</h2>
+            <p>You made <strong>$<span id="final-profit"></span></strong> profit</p>
+            <p>Your total CO₂e emissions were <strong><span id="final-co2"></span> kg</strong></p>
+            <button id="restart-btn">Play Again</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
