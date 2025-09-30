@@ -1,4 +1,4 @@
-const startingBudget = 1000;
+const startingBudget = 1000000;
 
 let budget = startingBudget;
 let totalProfit = 0;
