@@ -1,4 +1,4 @@
-const startingBudget = 1000000;
+const startingBudget = 100000;
 
 let budget = startingBudget;
 let totalProfit = 0;
@@ -16,43 +16,42 @@ const restartBtn = document.getElementById('restart-btn');
 
 const questions = [
     {
-        text: "What type of tractor do you want to buy?",
+        text: "Du kan ikke gå alle vegne, hvad vil du køre i?",
         options: [
-            { name: "Diesel Tractor", cost: 400, profit: 300, co2: 200, img: "https://via.placeholder.com/80" },
-            { name: "Electric Tractor", cost: 600, profit: 250, co2: 50, img: "https://via.placeholder.com/80" },
-            { name: "Second-Hand Tractor", cost: 250, profit: 150, co2: 100, img: "https://via.placeholder.com/80" }
+            { name: "Ny traktor (Diesel)", cost: 400, profit: 300, co2: 200, img: "https://www.profi.co.uk/wp-content/uploads/sites/8/2022/12/New-Holland-T7-Methane-Power-LNG-Tractor-lead.jpg" },
+            { name: "Ny traktor (Elektrisk)", cost: 600, profit: 250, co2: 50, img: "https://grouchyfarmer.com/wp-content/uploads/2023/09/screenshot-2023-09-25-at-5.31.41-am.png" },
+            { name: "Brugt traktor (Diesel)", cost: 250, profit: 150, co2: 100, img: "https://m.atcdn.co.uk/a/media/w600/6c66b3871f6643c9b548d0abcab69e12.jpg" }
         ]
     },
     {
-        text: "What type of fertilizer will you use?",
+        text: "Dine afgrøder har brug for en hånd, hvilken gødning bruger du?",
         options: [
-            { name: "Chemical Fertilizer", cost: 300, profit: 500, co2: 400, img: "https://via.placeholder.com/80" },
-            { name: "Organic Fertilizer", cost: 350, profit: 400, co2: 150, img: "https://via.placeholder.com/80" },
-            { name: "No Fertilizer", cost: 0, profit: 100, co2: 0, img: "https://via.placeholder.com/80" }
+            { name: "Kemisk gødning", cost: 300, profit: 500, co2: 400, img: "https://gratisgødning.dk/wp-content/uploads/2015/09/kunst.jpg" },
+            { name: "Organisk gødning", cost: 350, profit: 400, co2: 150, img: "https://haveselskabet.dk/media/pmqg2abi/intro-istock-545582750_0.jpg" },
+            { name: "Ingen gødning", cost: 0, profit: 100, co2: 0, img: "https://static.thenounproject.com/png/4476033-200.png" }
         ]
     },
     {
-        text: "What energy source will you invest in?",
+        text: "Lidt ekstra strøm ville være rart, hvilken slags vil du invistere i?",
         options: [
-            { name: "Solar Panels", cost: 500, profit: 300, co2: -50, img: "https://via.placeholder.com/80" },
-            { name: "Diesel Generator", cost: 200, profit: 200, co2: 300, img: "https://via.placeholder.com/80" },
-            { name: "Do Nothing", cost: 0, profit: 0, co2: 0, img: "https://via.placeholder.com/80" }
+            { name: "Solpaneler", cost: 500, profit: 300, co2: -50, img: "https://cdn.britannica.com/94/192794-050-3F3F3DDD/panels-electricity-order-sunlight.jpg" },
+            { name: "Dieselgenerator", cost: 200, profit: 200, co2: 300, img: "https://shop74079.sfstatic.io/upload_dir/pics/produkt-billeder/vaerktoej/Walter-stahl/generator/Walter-Stahl-PR10000D/_thumbs/1.w1200.jpg" },
+            { name: "Jeg tager bare strømmen fra væggen", cost: 0, profit: 0, co2: 0, img: "https://bolius-prod.s3.amazonaws.com/_processed_/e/6/csm_20120907-020938-3-2000x1264web-Lundtoftevej_2bf86a061c.jpg" }
         ]
     },
     {
-        text: "What irrigation system do you choose?",
+        text: "Dine marker skal vandes, hvordan har du lyst til at gøre det?",
         options: [
-            { name: "Drip Irrigation", cost: 300, profit: 250, co2: 50, img: "https://via.placeholder.com/80" },
-            { name: "Flood Irrigation", cost: 100, profit: 150, co2: 200, img: "https://via.placeholder.com/80" },
-            { name: "Manual Watering", cost: 50, profit: 50, co2: 0, img: "https://via.placeholder.com/80" }
+            { name: "Drypvanding", cost: 300, profit: 250, co2: 50, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVFhMhZ-7msvuCJc16eOrqW5kg_gu76pjT-g&s" },
+            { name: "Jeg vander dem da bare selv", cost: 50, profit: 50, co2: 0, img: "https://shop65489.sfstatic.io/upload_dir/shop/_thumbs/Vandkande_9-liter.w610.h610.backdrop.jpg" }
         ]
     },
     {
-        text: "What crop do you plant?",
+        text: "Du skal plante nogle afgrøder, hvad kunne du tænke dig??",
         options: [
-            { name: "Corn (high yield, high emissions)", cost: 400, profit: 600, co2: 400, img: "https://via.placeholder.com/80" },
-            { name: "Wheat (moderate)", cost: 300, profit: 400, co2: 200, img: "https://via.placeholder.com/80" },
-            { name: "Legumes (eco-friendly)", cost: 250, profit: 350, co2: 50, img: "https://via.placeholder.com/80" }
+            { name: "Raps", cost: 400, profit: 600, co2: 400, img: "https://via.placeholder.com/80" },
+            { name: "Hvede", cost: 300, profit: 400, co2: 200, img: "https://via.placeholder.com/80" },
+            { name: "Bælgplanter", cost: 250, profit: 350, co2: 50, img: "https://via.placeholder.com/80" }
         ]
     }
 ];
