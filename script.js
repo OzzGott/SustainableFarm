@@ -165,7 +165,6 @@ restartBtn.addEventListener('click', () => {
 });
 
 startButton.addEventListener('click', () => {
-    console.log("i was clicked");
     budget = startingBudget;
     totalProfit = 0;
     totalCO2 = 0;
