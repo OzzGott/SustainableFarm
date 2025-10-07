@@ -65,7 +65,7 @@ body {
     pointer-events: none;
 }
 
-#end-screen {
+#end-screen, #start-screen {
     text-align: center;
 }
 
