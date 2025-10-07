@@ -1,6 +1,6 @@
 # "Frejs Grønne Landbrugsspil" / Sustainable Farm Game
-A prototype game made to showcase a possible quiz-like game made with JavaScript to embed on a Squarespace site
-The game is in danish and meant to show the balance needed in order to have a farm that is both profitable and green
+A prototype game made to showcase a possible quiz-like game made with JavaScript to embed on a Squarespace site.\n
+The game is in danish and meant to show the balance needed in order to have a farm that is both profitable and green.
 
 ## Usage
 You can run the game by opening 'index.html' in any modern browser
