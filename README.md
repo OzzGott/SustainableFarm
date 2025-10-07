@@ -3,7 +3,7 @@ A prototype game made to showcase a possible quiz-like game made with JavaScript
 The game is in danish and meant to show the balance needed in order to have a farm that is both profitable and green.
 
 ## Usage
-You can run the game by opening 'index.html' in any modern browser
+You can run the game by opening 'index.html' in any modern browser. <br/>
 The game can also be embedded on any Squarespace site with a codeblock - tutorial not provided
 
 ## License
@@ -12,7 +12,7 @@ Copyright (c) OzzGott, 2025
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to use,
 copy, modify, and distribute the Software for any purpose, subject to the following conditions:
-
+<br/>
 1. You must give credit to OzzGott.
 2. Any references to my employer (Frej) in the code, comments, or documentation must be removed.
 3. This Software is provided as a template and example, not as an official product of me or my employer.
