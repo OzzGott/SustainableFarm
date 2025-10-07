@@ -10,9 +10,11 @@ const profitEl = document.getElementById('profit');
 const co2El = document.getElementById('co2');
 const questionArea = document.getElementById('question-area');
 const endScreen = document.getElementById('end-screen');
+const startScreen = document.getElementById('start-screen');
 const finalProfitEl = document.getElementById('final-profit');
 const finalCO2El = document.getElementById('final-co2');
 const restartBtn = document.getElementById('restart-btn');
+const startButton = document.getElementById('start-game-btn');
 
 const questions = [
     {
@@ -65,21 +67,21 @@ const questions = [
     },    {
         text: "Markerne skal jo nok vandes, hvordan burde man gøre det?",
         options: [
-            { name: "Automatisk vandingssystem", cost: 20_000, profit: 10_000, co2: 200, img: "https://cdn.prod.website-files.com/649596b20e583843b3d32617%2F678d1d16378686294893be5f_Bannervideo%20test-poster-00001.jpg" },
-            { name: "Manuel vanding", cost: 5_000, profit: 4_000, co2: 50, img: "https://cdn.britannica.com/94/192794-050-3F3F3DDD/panels-electricity-order-sunlight.jpg" },
-            { name: "Det regner sgu så meget i Danmark, ingen vanding", cost: 0, profit: 1_000, co2: 0, img: "https://bolius-prod.s3.amazonaws.com/_processed_/e/6/csm_20120907-020938-3-2000x1264web-Lundtoftevej_2bf86a061c.jpg" }
+            { name: "Automatisk vandingssystem", cost: 20_000, profit: 10_000, co2: 200, img: "https://www.agrometer.dk/assets/Uploads/_resampled/CroppedFocusedImageWzYwMCw0MjUsInkiLDEyXQ/533-530144455b0b416e121c82ceaa7c4bdb.jpg" },
+            { name: "Manuel vanding", cost: 5_000, profit: 4_000, co2: 50, img: "https://husoghaveavisen.dk/wp-content/uploads/2022/05/vandehaven.jpg" },
+            { name: "Det regner sgu så meget i Danmark, ingen vanding", cost: 0, profit: 1_000, co2: 0, img: "https://t4.ftcdn.net/jpg/07/51/81/45/360_F_751814560_LuNjQ8vHsOV4TYhvC4AXjxUBC2QjzVWY.jpg" }
         ]
     },    {
         text: "Så skal vi til at få jord under neglene, hvordan vil du passe på marken?",
         options: [
-            { name: "Dyb pløjning", cost: 10_000, profit: 4_000, co2: 300, img: "https://cdn.prod.website-files.com/649596b20e583843b3d32617%2F678d1d16378686294893be5f_Bannervideo%20test-poster-00001.jpg" },
-            { name: "Overfladepløjning", cost: 5_000, profit: 3_000, co2: 150, img: "https://cdn.britannica.com/94/192794-050-3F3F3DDD/panels-electricity-order-sunlight.jpg" },
-            { name: "Ingen pløjning, jeg efterlader efterafgrøder", cost: 0, profit: 2_000, co2: 0, img: "https://bolius-prod.s3.amazonaws.com/_processed_/e/6/csm_20120907-020938-3-2000x1264web-Lundtoftevej_2bf86a061c.jpg" }
+            { name: "Dyb pløjning", cost: 10_000, profit: 4_000, co2: 300, img: "https://www.maskinbladet.dk/assets/imagecache/930x580/article/ww256904_4-21BFDBB749866EF014D411F4C7F2FC67.jpg" },
+            { name: "Overfladepløjning", cost: 5_000, profit: 3_000, co2: 150, img: "https://farmbackup.imgix.net/j_25.jpg?w=360&h=225&fit=crop&crop=entropy&auto=format,enhance&q=35" },
+            { name: "Ingen pløjning, jeg efterlader efterafgrøder", cost: 0, profit: 2_000, co2: 0, img: "https://frdk.dk/wp-content/uploads/2022/05/DSC_0211-Kopi.jpg" }
         ]
     },    {
         text: "Så er det tid til at få penge i kassen, hvordan vil du sælge din høst?",
         options: [
-            { name: "Jeg sælger det hele til engrosmarkedet", cost: 0, profit: 20_000, co2: 0, img: "https://cdn.prod.website-files.com/649596b20e583843b3d32617%2F678d1d16378686294893be5f_Bannervideo%20test-poster-00001.jpg" },
+            { name: "Jeg sælger det hele til engrosmarkedet", cost: 0, profit: 20_000, co2: 0, img: "https://valeindustries.ca/wp-content/uploads/2020/08/Vale-industries-grain-giant.jpg" },
             { name: "Jeg sælger primært til lokale kunder (koster lidt i markedsføring)", cost: 1_000, profit: 15_000, co2: -50, img: "https://cdn.britannica.com/94/192794-050-3F3F3DDD/panels-electricity-order-sunlight.jpg" },
             { name: "Direktesalg via gårdbutik", cost: 5_000, profit: 18_000, co2: -100, img: "https://bolius-prod.s3.amazonaws.com/_processed_/e/6/csm_20120907-020938-3-2000x1264web-Lundtoftevej_2bf86a061c.jpg" }
         ]
@@ -95,6 +97,7 @@ function updateStatus() {
 function renderQuestion() {
     questionArea.innerHTML = "";
     endScreen.classList.add("hidden");
+    startScreen.classList.add("hidden");
 
     if (currentQuestion >= questions.length) {
         showEndScreen();
@@ -141,11 +144,28 @@ function selectOption(option) {
 function showEndScreen() {
     questionArea.innerHTML = "";
     endScreen.classList.remove("hidden");
+    startScreen.classList.add("hidden");
     finalProfitEl.textContent = totalProfit;
     finalCO2El.textContent = totalCO2;
 }
 
+function showStartScreen() {
+    questionArea.innerHTML = "";
+    endScreen.classList.add("hidden");
+    startScreen.classList.remove("hidden");
+}
+
 restartBtn.addEventListener('click', () => {
+    budget = startingBudget;
+    totalProfit = 0;
+    totalCO2 = 0;
+    currentQuestion = 0;
+    updateStatus();
+    renderQuestion();
+});
+
+startButton.addEventListener('click', () => {
+    console.log("i was clicked");
     budget = startingBudget;
     totalProfit = 0;
     totalCO2 = 0;
@@ -168,5 +188,4 @@ function nextQuestion(probability){
 }
 
 // Initialize
-updateStatus();
-renderQuestion();
+showStartScreen();
