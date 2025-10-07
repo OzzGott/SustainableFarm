@@ -16,7 +16,7 @@ const restartBtn = document.getElementById('restart-btn');
 
 const questions = [
     {
-        text: "Du skal plante nogle afgrøder, hvad kunne du tænke dig??",
+        text: "Du skal plante nogle afgrøder, hvad kunne du tænke dig?",
         options: [
             { name: "Raps", cost: 12_000, profit: 18_000, co2: 700, img: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Brassica_napus_LC0027.jpg" },
             { name: "Hvede", cost: 10_000, profit: 15_000, co2: 500, img: "https://s3-eu-west-1.amazonaws.com/yara-links/srgt.jpg" },
@@ -36,7 +36,7 @@ const questions = [
         options: [
             { name: "Konventionel sprøjtning", cost: 4_000, profit: 5_000, co2: 400, img: "https://okonu.dk/img/asset/YXJ0aWNsZXMvMjAxOS9Qb2xpdGlrX1VkdmlrbGluZy9wZXN0aWNpZGVyLXNwcm9qdGVzLS0tY29sb3VyYm94LmpwZw==/pesticider-sprojtes---colourbox.jpg?fit=crop-49-68-1&w=2351&h=1322&s=87f3df8fa17803db1614ee934b7553e4" },
             { name: "Biologisk sprøjtning", cost: 5_000, profit: 3_000, co2: 100, img: "https://mim.dk/media/ceql4wl0/hjemmeside_kemi-og-drikkevand_kemikalier.jpg?width=960" },
-            { name: "Så slemt kan de da ikke være, ingen pesticider", cost: 0, profit: 1_000, co2: 0, img: "https://shop65489.sfstatic.io/upload_dir/shop/_thumbs/Vandkande_9-liter.w610.h610.backdrop.jpg" }
+            { name: "Så slemt kan de da ikke være, ingen pesticider", cost: 0, profit: 1_000, co2: 0, img: "https://st5.depositphotos.com/36736796/65408/v/450/depositphotos_654082470-stock-illustration-pesticides-prohibit-sign-crossed-out.jpg" }
         ]
     },
     {
@@ -44,15 +44,15 @@ const questions = [
         options: [
             { name: "Ny effektiv traktor", cost: 50_000, profit: 15_000, co2: 1000, img: "https://www.profi.co.uk/wp-content/uploads/sites/8/2022/12/New-Holland-T7-Methane-Power-LNG-Tractor-lead.jpg" },
             { name: "Brugt traktor", cost: 20_000, profit: 8_000, co2: 700, img: "https://m.atcdn.co.uk/a/media/w600/6c66b3871f6643c9b548d0abcab69e12.jpg" },
-            { name: "Jeg lejer en traktor når jeg skal bruge den", cost: 10_000, profit: 5_000, co2: 500, img: "https://grouchyfarmer.com/wp-content/uploads/2023/09/screenshot-2023-09-25-at-5.31.41-am.png" }
+            { name: "Jeg lejer en traktor når jeg skal bruge den", cost: 10_000, profit: 5_000, co2: 500, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1vzG0CSMn_LKmI7IJl4kt8VYXlBV5rB5rTF-x9O3nMeBdb_DWCvU9qsJ5m2fZzzLaJPA&usqp=CAU" }
         ]
     },
     {
         text: "Nogle dyr ville være på sin plads, men hvilke?",
         options: [
-            { name: "Malkekøer", cost: 30_000, profit: 20_000, co2: 2_000, img: "https://cdn.prod.website-files.com/649596b20e583843b3d32617%2F678d1d16378686294893be5f_Bannervideo%20test-poster-00001.jpg" },
-            { name: "Får", cost: 15_000, profit: 10_000, co2: 500, img: "https://cdn.britannica.com/94/192794-050-3F3F3DDD/panels-electricity-order-sunlight.jpg" },
-            { name: "Dyr må blive en anden god gang", cost: 0, profit: 0, co2: 0, img: "https://bolius-prod.s3.amazonaws.com/_processed_/e/6/csm_20120907-020938-3-2000x1264web-Lundtoftevej_2bf86a061c.jpg" }
+            { name: "Malkekøer", cost: 30_000, profit: 20_000, co2: 2_000, img: "https://www.maskinbladet.dk/assets/imagecache/930x580/article/ent101951_1-CDFF8FA22BAEA7D910A7761D175C0AE8.jpg" },
+            { name: "Får", cost: 15_000, profit: 10_000, co2: 500, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOn7PlCdG8y2DoNPBmsMPqUJlVzd8wksKioA&s"},
+            { name: "Dyr må blive en anden god gang", cost: 0, profit: 0, co2: 0, img: "https://markmuseum.dk/assets/uploads/_x2000/En-mark.jpg" }
         ]
     },
     {
@@ -70,11 +70,18 @@ const questions = [
             { name: "Det regner sgu så meget i Danmark, ingen vanding", cost: 0, profit: 1_000, co2: 0, img: "https://bolius-prod.s3.amazonaws.com/_processed_/e/6/csm_20120907-020938-3-2000x1264web-Lundtoftevej_2bf86a061c.jpg" }
         ]
     },    {
-        text: "Jorden skal ?",
+        text: "Så skal vi til at få jord under neglene, hvordan vil du passe på marken?",
         options: [
-            { name: "Automatisk vandingssystem", cost: 20_000, profit: 10_000, co2: 200, img: "https://cdn.prod.website-files.com/649596b20e583843b3d32617%2F678d1d16378686294893be5f_Bannervideo%20test-poster-00001.jpg" },
-            { name: "Manuel vanding", cost: 5_000, profit: 4_000, co2: 50, img: "https://cdn.britannica.com/94/192794-050-3F3F3DDD/panels-electricity-order-sunlight.jpg" },
-            { name: "Det regner sgu så meget i Danmark, ingen vanding", cost: 0, profit: 1_000, co2: 0, img: "https://bolius-prod.s3.amazonaws.com/_processed_/e/6/csm_20120907-020938-3-2000x1264web-Lundtoftevej_2bf86a061c.jpg" }
+            { name: "Dyb pløjning", cost: 10_000, profit: 4_000, co2: 300, img: "https://cdn.prod.website-files.com/649596b20e583843b3d32617%2F678d1d16378686294893be5f_Bannervideo%20test-poster-00001.jpg" },
+            { name: "Overfladepløjning", cost: 5_000, profit: 3_000, co2: 150, img: "https://cdn.britannica.com/94/192794-050-3F3F3DDD/panels-electricity-order-sunlight.jpg" },
+            { name: "Ingen pløjning, jeg efterlader efterafgrøder", cost: 0, profit: 2_000, co2: 0, img: "https://bolius-prod.s3.amazonaws.com/_processed_/e/6/csm_20120907-020938-3-2000x1264web-Lundtoftevej_2bf86a061c.jpg" }
+        ]
+    },    {
+        text: "Så er det tid til at få penge i kassen, hvordan vil du sælge din høst?",
+        options: [
+            { name: "Jeg sælger det hele til engrosmarkedet", cost: 0, profit: 20_000, co2: 0, img: "https://cdn.prod.website-files.com/649596b20e583843b3d32617%2F678d1d16378686294893be5f_Bannervideo%20test-poster-00001.jpg" },
+            { name: "Jeg sælger primært til lokale kunder (koster lidt i markedsføring)", cost: 1_000, profit: 15_000, co2: -50, img: "https://cdn.britannica.com/94/192794-050-3F3F3DDD/panels-electricity-order-sunlight.jpg" },
+            { name: "Direktesalg via gårdbutik", cost: 5_000, profit: 18_000, co2: -100, img: "https://bolius-prod.s3.amazonaws.com/_processed_/e/6/csm_20120907-020938-3-2000x1264web-Lundtoftevej_2bf86a061c.jpg" }
         ]
     },
 ];
@@ -147,8 +154,17 @@ restartBtn.addEventListener('click', () => {
     renderQuestion();
 });
 
-function nextQuestion(percent){
 
+//possibility for randomness (crops don't sell or smth)
+function nextQuestion(probability){
+    const rand_Num = Math.random();
+    if (rand_Num < probability) {
+        currentQuestion++;
+    }
+    else {
+        //Bad thing happens
+        currentQuestion++;
+    }
 }
 
 // Initialize
