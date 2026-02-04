@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Farm Investment Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game-container">
+    <h1>Frejs grønne landbrugsspil</h1>
+    <img src="https://legeakademiet.dk/media/catalog/product//l/e/legnav_42-2018__200_1.jpg" alt="farm" style="width: 50%; margin: auto; display: block;">
+    <div id="game">
+        <div id="status-bar">
+            <div>💰 Budget: <span id="budget">100000</span>,-</div>
+            <div>📈 Profit: <span id="profit">0</span>,-</div>
+            <div>🌿 CO₂e: <span id="co2">0</span> kg</div>
+        </div>
+
+        <div id="question-area"></div>
+
+        <div id="end-screen" class="hidden">
+            <h2>Du byggede en bondegård!</h2>
+            <p>Du tjente <strong><span id="final-profit"></span></strong> kroner i ren profit</p>
+            <p>Du udslap <strong><span id="final-co2"></span> kg CO₂e</strong></p>
+            <button id="restart-btn">Prøv igen</button>
+        </div>
+        <div id="start-screen">
+            <h2>Velkommen til <strong>Det grønne landbrugsspil!</strong></h2>
+            <p>I det her spil er du en landmand med en bondegård, der skal have sig en produktion</p>
+            <p>Her skal du tage en masse beslutninger, her må du veje pris, profit og miljøbekostning mod hinanden</p>
+            <p>Du bestemmer selv om du vil gå efter mest profit, den grønneste gård eller en god blanding</p>
+            <p>(Du er også altid velkommen til at prøve flere gange)</p>
+            <button id="start-game-btn" type="button">Start spillet!</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
